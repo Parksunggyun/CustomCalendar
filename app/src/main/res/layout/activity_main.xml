@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/prevMonthBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_arrow_prev"
+        android:theme="@style/BorderLessButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/nextMonthBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_arrow_next"
+        android:theme="@style/BorderLessButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/calendarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:padding="8dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="28sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="2020년 4월" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sundayTxtView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@id/calendarTitle"
+        app:layout_constraintStart_toStartOf="@id/prevMonthBtn"
+        app:layout_constraintEnd_toStartOf="@id/mondayTxtView"
+        style="@style/day_of_week"
+        android:text="@string/txt_sunday"
+        android:textColor="@color/sunday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mondayTxtView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/sundayTxtView"
+        app:layout_constraintStart_toEndOf="@id/sundayTxtView"
+        app:layout_constraintEnd_toStartOf="@id/tuesdayTxtView"
+        style="@style/day_of_week"
+        android:text="@string/txt_monday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tuesdayTxtView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/sundayTxtView"
+        app:layout_constraintStart_toEndOf="@id/mondayTxtView"
+        app:layout_constraintEnd_toStartOf="@id/wednesdayTxtView"
+        style="@style/day_of_week"
+        android:text="@string/txt_tuesday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/wednesdayTxtView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/sundayTxtView"
+        app:layout_constraintStart_toEndOf="@id/tuesdayTxtView"
+        app:layout_constraintEnd_toStartOf="@id/thursdayTxtView"
+        style="@style/day_of_week"
+        android:text="@string/txt_wednesday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/thursdayTxtView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/sundayTxtView"
+        app:layout_constraintStart_toEndOf="@id/wednesdayTxtView"
+        app:layout_constraintEnd_toStartOf="@id/fridayTxtView"
+        style="@style/day_of_week"
+        android:text="@string/txt_thursday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fridayTxtView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/sundayTxtView"
+        app:layout_constraintStart_toEndOf="@id/thursdayTxtView"
+        app:layout_constraintEnd_toStartOf="@id/saturdayTxtView"
+        style="@style/day_of_week"
+        android:text="@string/txt_friday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/saturdayTxtView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/sundayTxtView"
+        app:layout_constraintStart_toEndOf="@id/fridayTxtView"
+        app:layout_constraintEnd_toEndOf="@id/nextMonthBtn"
+        style="@style/day_of_week"
+        android:text="@string/txt_saturday"
+        android:textColor="@color/saturday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/calendarViewPager"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/sundayTxtView"
+        app:layout_constraintStart_toStartOf="@id/sundayTxtView"
+        app:layout_constraintEnd_toEndOf="@id/saturdayTxtView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

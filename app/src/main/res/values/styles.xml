@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="BorderLessButton" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">
+            @style/Widget.AppCompat.Button.Borderless.Colored
+        </item>
+        <item name="colorAccent">#FFAB40</item>
+    </style>
+
+
+    <style name="day_of_week">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+</resources>
