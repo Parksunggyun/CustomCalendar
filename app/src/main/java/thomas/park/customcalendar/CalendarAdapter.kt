@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class CalendarAdapter : RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder>() {
@@ -31,14 +32,31 @@ class CalendarAdapter : RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder>
                 height = mHeight
             }
         }
-        item[position].apply {
-            holder.dayTxt.text = day
-        }
-    }
 
-    fun setLength(length: Int) {
-        mWidth = length
-        mHeight = length
+        val textColor = when(position % 7) {
+            0 -> {
+                R.color.sunday
+            }
+            6 -> {
+                R.color.saturday
+            }
+            else -> {
+                android.R.color.black
+            }
+        }
+        item[position].apply {
+            holder.scheduleDot.apply {
+                if(!hasSchedule) visibility = View.GONE
+            }
+            holder.dayTxt.apply{
+                setTextColor(ContextCompat.getColor(context, textColor))
+                alpha = 1.0f
+                text = day
+                if(!isThisMonth) {
+                    alpha = 0.4f
+                }
+
+            }}
     }
 
     fun update(item: ArrayList<CalendarItem>) {

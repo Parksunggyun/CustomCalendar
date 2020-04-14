@@ -6,4 +6,6 @@
 
     <color name="sunday">#EF2E20</color>
     <color name="saturday">#0E4BE6</color>
+
+    <color name="text_disable_color">#9F9F9F</color>
 </resources>
